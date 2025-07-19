@@ -1,0 +1,14 @@
+{
+    "name": "Order Book Dev Container",
+    "build": {
+      "dockerfile": "Dockerfile"
+    },
+    "settings": {
+      "terminal.integrated.defaultProfile.linux": "bash"
+    },
+    "extensions": [
+      "ms-python.python"
+    ],
+    "postCreateCommand": "pip3.11 install -r requirements.txt"
+}
+  
