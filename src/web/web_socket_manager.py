@@ -1,8 +1,8 @@
 from fastapi import Websocket
 
 class WebSocketManager:
-    __init__(self):
-        pass
+    """WebSocketManager"""
     
     def send_json_msg(self):
+        """Send JSON Msg"""
         pass

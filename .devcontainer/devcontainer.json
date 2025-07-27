@@ -18,7 +18,7 @@
 	"mounts": [
 		"source=${env:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
 	],
-	"postCreateCommand": "pip3.11 install -r requirements.txt"
+	"postCreateCommand": "pip3.11 install -r requirements.txt && npm install"
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
