@@ -1,3 +1,4 @@
+import os
 import logging
 import uvicorn
 from fastapi import FastAPI
@@ -12,13 +13,23 @@ def main():
     logging.info("Order book engine running")
     app = FastAPI()
     
-    # Serve JS/CSS from /static
-    app.mount("/", StaticFiles(directory="static", html=True), name="static")
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    build_dir = os.path.join(base_dir, "../frontend/build")
+
+    app.mount("/static", StaticFiles(directory=os.path.join(build_dir, "static")), name="static")
 
     # Serve HTML
     @app.get("/")
     def index():
         return FileResponse("frontend/build/index.html")
+    
+    @app.get("/api/orders")
+    def get_orders():
+        return [
+            {"price": 101.0, "amount": 5},
+            {"price": 100.5, "amount": 10},
+            {"price": 100.0, "amount": 20},
+        ]
 
     # Allow requests from your mobile app
     app.add_middleware(
