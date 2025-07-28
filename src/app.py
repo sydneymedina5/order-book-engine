@@ -21,7 +21,7 @@ def main():
     # Serve HTML
     @app.get("/")
     def index():
-        return FileResponse("frontend/build/index.html")
+        return FileResponse(os.path.join(build_dir, "index.html"))
     
     @app.get("/api/orders")
     def get_orders():
@@ -30,6 +30,11 @@ def main():
             {"price": 100.5, "amount": 10},
             {"price": 100.0, "amount": 20},
         ]
+
+    @app.get("/manifest.json")
+    def serve_manifest():
+        return FileResponse(os.path.join(build_dir, "manifest.json"))
+
 
     # Allow requests from your mobile app
     app.add_middleware(
