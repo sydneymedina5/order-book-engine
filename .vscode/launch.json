@@ -7,6 +7,19 @@
         "request": "launch",
         "program": "${workspaceFolder}/src/app.py",
         "console": "integratedTerminal"
+      },
+      {
+        "name": "Order Book Sim",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/src/simulator/app.py",
+        "console": "integratedTerminal"
+      }
+    ],
+    "compounds": [
+      {
+        "name": "Run Sim & App",
+        "configurations": ["Order Book Sim", "Order Book App"]
       }
     ]
   }

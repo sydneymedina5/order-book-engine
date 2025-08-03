@@ -7,8 +7,16 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
 
+def configure_logging():
+    """Configure Logging"""
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+    )
+
 def main():
     """Runner code for Ordering Book App"""
+    configure_logging()
     
     logging.info("Order book engine running")
     app = FastAPI()
