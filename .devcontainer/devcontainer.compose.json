@@ -1,0 +1,17 @@
+{
+    "version": "0.1.0",
+    "services": {
+      "app": {
+        "build": {
+          "dockerfile": "../Dockerfile",
+          "context": ".."
+        }
+      },
+      "redis": {
+        "image": "redis:7",
+        "ports": ["6379:6379"]
+      }
+    },
+    "forwardPorts": [6379]
+  }
+  

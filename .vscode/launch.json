@@ -2,19 +2,25 @@
     "version": "0.2.0",
     "configurations": [
       {
-        "name": "Order Book App",
+        "name": "App Order Book",
         "type": "python",
         "request": "launch",
         "program": "${workspaceFolder}/src/app.py",
-        "console": "integratedTerminal"
+        "console": "integratedTerminal",
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}/src"
+        }
       },
       {
-        "name": "Order Book Sim",
+        "name": "Sim Order Book",
         "type": "python",
         "request": "launch",
-        "program": "${workspaceFolder}/src/simulator/app.py",
-        "console": "integratedTerminal"
-      }
+        "program": "${workspaceFolder}/src/simulator/sim_app.py",
+        "console": "integratedTerminal",
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}/src"
+        }
+      },
     ],
     "compounds": [
       {
